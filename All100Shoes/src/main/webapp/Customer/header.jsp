@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="customerProductList.do">all</a>
+          <a class="nav-link" href="customerProductList.do">All</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -26,7 +26,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=nike&pcategory=sneakers">Sneakers</a></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=nike&pcategory=running">Running</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <!-- <li><hr class="dropdown-divider"></li> -->
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=nike&pcategory=basketball">Basketball</a></li>
           </ul>
         </li>
@@ -37,7 +37,6 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=adidas&pcategory=sneakers">Sneakers</a></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=adidas&pcategory=running">Running</a></li>
-            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=adidas&pcategory=basketball">Basketball</a></li>
           </ul>
         </li>
@@ -48,7 +47,6 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=underarmour&pcategory=sneakers">Sneakers</a></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=underarmour&pcategory=running">Running</a></li>
-            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=underarmour&pcategory=basketball">Basketball</a></li>
           </ul>
         </li>
