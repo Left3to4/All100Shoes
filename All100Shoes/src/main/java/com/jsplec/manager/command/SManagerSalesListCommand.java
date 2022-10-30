@@ -13,6 +13,9 @@ public class SManagerSalesListCommand implements SManagerCommand {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
+		
+		request.getParameter(null);
+		
 		MSalesListDao dao = new MSalesListDao();
 		ArrayList<MSalesDto> dtos = dao.salesList();
 		request.setAttribute("SALESLIST", dtos);

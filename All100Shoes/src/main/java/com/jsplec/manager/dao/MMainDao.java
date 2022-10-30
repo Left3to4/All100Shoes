@@ -38,8 +38,9 @@ public class MMainDao {
 			preparedStatement = connection.prepareStatement(query);
 			resultSet = preparedStatement.executeQuery();
 			
-			result = resultSet.getInt(1);
-			System.out.println(result);
+			if(resultSet.next()) {
+				result = resultSet.getInt(1);
+			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -55,7 +56,7 @@ public class MMainDao {
 		return result;
 	}
 	
-	// 오늘 가입한 고객 건수 검색
+	// 
 	public int ordersToday() {
 		int result = 0;
 		Connection connection = null;
@@ -68,8 +69,9 @@ public class MMainDao {
 			String query = "select count(*) from orders where orderdate = curdate()";
 			preparedStatement = connection.prepareStatement(query);
 			resultSet = preparedStatement.executeQuery();
-			
-			result = resultSet.getInt(1);
+			if(resultSet.next()) {
+				result = resultSet.getInt(1);
+			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -99,7 +101,9 @@ public class MMainDao {
 				preparedStatement = connection.prepareStatement(query);
 				resultSet = preparedStatement.executeQuery();
 				
-				result = resultSet.getInt(1);
+				if(resultSet.next()) {
+					result = resultSet.getInt(1);
+				}
 				
 			}catch(Exception e) {
 				e.printStackTrace();

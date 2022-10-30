@@ -27,13 +27,18 @@
 				</button>
 			</div>
 				
+		<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-10">
+			<li><a href="sales.do?" class="nav-link px-2 link-secondary">일별</a></li>
+			<li><a href="sales.do" class="nav-link px-2 link-secondary">주별</a></li>
+			<li><a href="sales.do" class="nav-link px-2 link-secondary">월별</a></li>
+			<li><a href="sales.do" class="nav-link px-2 link-secondary">년별</a></li> &nbsp;&nbsp;&nbsp;
+		</ul>	
+				
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="align-items: center">
 			<form action= "sales.do" class="d-flex" role="search">
-				<select name = "customer">
-					<option value = "date">날짜</option>
-				</select>&nbsp;&nbsp;&nbsp;
 				
-				<input type = "text" name = "content" size = "30" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				<input type = "text" name = "content" size = "30" class="form-control me-2" type="search" placeholder="Start" aria-label="Search"> -&nbsp;
+				<input type = "text" name = "content" size = "30" class="form-control me-2" type="search" placeholder="End" aria-label="Search">
 				<input type = "submit" value = "검색" class="btn btn-outline-success">
 			</form>
 			

@@ -30,13 +30,13 @@
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="align-items: center">
 			<form action= "userlist.do" name="userlist" class="d-flex" role="search">
 				<select name = "select">
-					<option value = "id">아이디</option>
-					<option value = "name">이름</option>
-					<option value = "phone" selected = "selected">전화번호</option>
-					<option value = "address">주소</option>
-					<option value = "initdate">가입일</option>
-					<option value = "updatedate">수정일</option>
-					<option value = "deletedate">삭제일</option>
+					<option value = "customerid">아이디</option>
+					<option value = "customername">이름</option>
+					<option value = "customerphone" selected = "selected">전화번호</option>
+					<option value = "customeraddress">주소</option>
+					<option value = "customerinitdate">가입일</option>
+					<option value = "customerupdatedate">수정일</option>
+					<option value = "customerdeletedate">삭제일</option>
 				</select>&nbsp;&nbsp;&nbsp;
 				
 				<input type = "text" name = "content" size = "30" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -41,6 +41,7 @@ public class MSalesListDao {
 			connection = dataSource.getConnection();
 			
 			String query = "select sum(ordersaleprice), date_format(orderdate, '%Y-%m-%d') as orderdate from orders where orderstatus = '구매' ";
+//			String query1 = "where between orderdate = to ";
 			String query1 = "group by orderdate order by orderdate desc";
 			preparedStatement = connection.prepareStatement(query+query1);
 			resultSet = preparedStatement.executeQuery();

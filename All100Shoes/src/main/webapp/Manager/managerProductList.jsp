@@ -30,10 +30,10 @@
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="align-items: center">
 			<form action= "productlist.do" name="productlist" class="d-flex" role="search">
 				<select name = "select">
-					<option value = "brand">브랜드</option>
-					<option value = "model" selected = "selected">제품명</option>
-					<option value = "size">사이즈</option>
-					<option value = "status">입고상태</option>
+					<option value = "productbrand">브랜드</option>
+					<option value = "productmodel" selected = "selected">제품명</option>
+					<option value = "productsize">사이즈</option>
+					<option value = "productstatus">입고상태</option>
 				</select>&nbsp;&nbsp;&nbsp;
 				
 				<input type = "text" name = "content" size = "30" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

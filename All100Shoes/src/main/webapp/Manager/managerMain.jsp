@@ -92,7 +92,7 @@
 	<form action="managermain.do" name="main" method="post">
 		<div class="row">
 		<div class="col-4" align="center">
-			<div class="card text-bg-light mb-3" style="width: 500px; height:500px;">
+			<div class="card text-bg-light mb-3" style="width: 450px; height:500px;">
 			<!-- <div class="card-header">Header</div> -->
 				<div class="card-body">
 					<h1 class="card-title" align="center">오늘 가입한 고객 수</h1>
@@ -102,7 +102,7 @@
 			</div>
 		</div>
 			<div class="col-4" align="center">
-			<div class="card text-bg-light mb-3" style="width: 500px; height:500px;">
+			<div class="card text-bg-light mb-3" style="width: 450px; height:500px;">
 			<!-- <div class="card-header">Header</div> -->
 				<div class="card-body">
 					<h1 class="card-title" align="center">오늘 판매 건수</h1>
@@ -113,7 +113,7 @@
 			</div>
 
 			<div class="col-4" align="center">
-			<div class="card text-bg-light mb-3" style="width: 500px; height:500px;">
+			<div class="card text-bg-light mb-3" style="width: 450px; height:500px;">
 			<!-- <div class="card-header">Header</div> -->
 				<div class="card-body">
 					<h1 class="card-title" align="center">오늘 매출</h1>
