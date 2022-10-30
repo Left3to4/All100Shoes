@@ -90,6 +90,7 @@
 	<main>
 		<form action="managermain.do" name="main" method="post">
 			<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+			<div class="col-lg-3 col-md-3">
 				<div
 					class="text bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 					<div class="my-3 py-3">
@@ -100,7 +101,9 @@
 						<p class="lead">${SIGNTODAY}</p>
 					</div>
 				</div>
+			</div>
 			
+			<div class="col-lg-3 col-md-3">
 				<div
 					class="text bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 					<div class="my-3 py-3">
@@ -111,6 +114,8 @@
 						<p class="lead">${ORDERSTODAY}</p>
 					</div>
 				</div>
+				</div>
+				<div class="col-lg-3 col-md-3">
 				<div class="text bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 					<div class="my-3 py-3">
 						<h2 class="display-5">오늘 매출</h2>
@@ -118,6 +123,7 @@
 					<div class="bg-light shadow-sm mx-auto"
 						style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; background: #c5cae9">
 						<p class="lead">${SALESTODAY}</p>
+					</div>
 					</div>
 				</div>
 			</div>

@@ -223,7 +223,7 @@
 				<div class="col-lg-2 col-md-4">
 					<div class="card" style="width: 14rem;">
 					<a href="productDetail.do?productmodel=${dto.productmodel}">
-						<img src="./productListImage/practice.png" class="card-img-top"
+						<img src="./shoesFolder1/2.png" class="card-img-top"
 							alt="${dto.productmodel}">
 					</a>
 						<div class="card-body">
@@ -235,10 +235,10 @@
 			</c:forEach>
 			
 			<c:forEach items="${productListCategory}" var="dto">
-				<div class="col">
+				<div class="col-lg-2 col-md-4">
 					<div class="card" style="width: 14rem;">
 					<a href="productDetail.do?productmodel=${dto.productmodel}">
-						<img src="./productListImage/practice.png" class="card-img-top"
+						<img src="./shoesFolder1/2.png" class="card-img-top"
 							alt="${dto.productmodel}">
 					</a>
 						<div class="card-body">
@@ -255,7 +255,6 @@
 	<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
 		crossorigin="anonymous"></script>
-
-
+		
 </body>
 </html>
