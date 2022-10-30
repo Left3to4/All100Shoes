@@ -9,18 +9,24 @@
 
 <script type="text/javascript">
 
-	function cartInsert(){
-		var form = document.detail;
+function cartInsert(){
+	var form = document.detail;
+					
 		form.action = "productCart.do";
 		form.submit();
-	}
-
-	function stock(type) {
-		var form = document.detail;
-		form.action = 'productStockCount.do';
-    	form.submit();
-	}
+	<%-- var customerid = <%=(String)session.getAttribute("CUSTOMERID") %>;
 	
+	if(customerid == null) {
+		alert("로그인 후 진행 가능한 기능입니다.");
+		
+	} else {
+		alert("로그인 후 진행 가능한 기능입니다.");
+		form.action = "login.do";
+		form.submit();
+		
+	} --%>
+}
+
 </script>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -95,7 +101,7 @@
 			</td>
 		</tr>
 
-		<tr style = "position: relative;  left: 790px; bottom: 300px;">
+		<tr style = " position: relative;  left: 790px; bottom: 300px;">
 			<td>
 				<button type = "button" class="btn btn-dark me-2" style = "width: 500px;" onclick="cartInsert()">CART</button>
 			</td>

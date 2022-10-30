@@ -105,13 +105,13 @@ public class Controller extends HttpServlet {
 	         viewPage="managerAdd.jsp";
 	         break;
 	         
-	      case("/Manager.delete.do"):
+	      case("/Manager/delete.do"):
 	         managercommand=new SManagerMypageDeleteCommand();
 	         managercommand.execute(request, response);
 	         viewPage="managermain.do";
 	         break;
 	         
-	      case("/Manager.update.do"):
+	      case("/Manager/update.do"):
 	         managercommand=new SManagerMypageUpdateCommand();
 	         managercommand.execute(request, response);
 	         viewPage="managermain.do";
@@ -175,6 +175,7 @@ public class Controller extends HttpServlet {
 	    	managercommand.execute(request, response);
 	    	viewPage = "managerHistory.jsp";
 	    	break;
+	    	
 	    	
 //			-------------- 오수 --------------------------
 		case("/Customer/customerProductList.do"):

@@ -21,15 +21,20 @@ public class SCustomerCartListDeleteDao {
 	}
 	
 	public void cartListDelete(String[] orderid) {
-		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
+		int i = 0;
+		
 		try {
 			connection = dataSource.getConnection();
+			if(orderid.length == 1) {
+				i = 0;
+			} else {
+				i = 1;
+			}
 			
-			for(int i = 0; i < orderid.length; i++) {
-				
+			for(; i < orderid.length; i++) {
 				String query = "delete from orders where orderid = ?";
 				preparedStatement = connection.prepareStatement(query);
 				

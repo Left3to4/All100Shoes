@@ -11,8 +11,6 @@ public class SCustomerCartListDeleteCommand implements SCustomerCommand {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
 		String[] orderid = request.getParameterValues("orderid");
-		
-		
 		SCustomerCartListDeleteDao dao = new SCustomerCartListDeleteDao();
 		
 		dao.cartListDelete(orderid);
