@@ -72,13 +72,19 @@
 		<%} %>
 		
 		<%if (session.getAttribute("CUSTOMERID") != null) { %>
-			<form name="loginokay" method="post">
+			<form name="loginokay" method="post" style="position: absolute; right: 0px; top: 30px;">
 				<%=session.getAttribute("CUSTOMERID") %>님, 안녕하세요! 
 				<input type="submit" class="btn btn-dark" onclick="mypage()" value="마이페이지">
-				<input type="submit" class="btn btn-outline-dark me-2" onclick="javascript: form.action='login.do'" value="로그아웃">
-				<input type="submit" class="btn btn-dark" onclick="javascript: form.action='customerCartPage.do'" value="장바구니">
+				<input type="submit" class="btn btn-outline-dark me-2" onclick="javascript: form.action='customerCartPage.do'" value="장바구니">
 			</form>
 		<%} %>
+	</div>
+	
+	<div class="col-md-4 text-end">
+			<form name="loginokay" method="post" style="position: absolute; right: 0px; top: 70px;">
+				<input type="submit" style="position: absolute; right: 85px;" class="btn btn-outline-dark me-2" onclick="javascript: form.action='customerBuyList.do'" value="구매 리스트">
+				<input type="submit" style="position: absolute; right: 10px;" class="btn btn-dark" onclick="javascript: form.action='login.do'" value="로그아웃">
+			</form>
 	</div>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.jsplec.customer.command.SCustomerBuyListCommand;
 import com.jsplec.customer.command.SCustomerCartCommand;
 import com.jsplec.customer.command.SCustomerCartListCommand;
 import com.jsplec.customer.command.SCustomerCartListDeleteCommand;
@@ -31,14 +32,14 @@ import com.jsplec.manager.command.SManagerFindPwCommand;
 import com.jsplec.manager.command.SManagerHistoryCommand;
 import com.jsplec.manager.command.SManagerIdCheckCommand;
 import com.jsplec.manager.command.SManagerLoginCommand;
-import com.jsplec.manager.command.SManagerMainOrdersTodayCommand;
-import com.jsplec.manager.command.SManagerMainSalesTodayCommand;
 import com.jsplec.manager.command.SManagerMainCommand;
 import com.jsplec.manager.command.SManagerMypageDeleteCommand;
 import com.jsplec.manager.command.SManagerMypageUpdateCommand;
 import com.jsplec.manager.command.SManagerProductListCommand;
+import com.jsplec.manager.command.SManagerProductSearchListCommand;
 import com.jsplec.manager.command.SManagerSalesListCommand;
 import com.jsplec.manager.command.SManagerUserListCommand;
+import com.jsplec.manager.command.SManagerUserSearchListCommand;
 
 
 /**
@@ -76,8 +77,6 @@ public class Controller extends HttpServlet {
 		HttpSession session = null;
 		String viewPage = null;
 		SManagerCommand managercommand = null;
-		SManagerCommand managercommand1 = null;
-		SManagerCommand managercommand2 = null;
 		SCustomerCommand customercommand = null;
 		
 		String uri = request.getRequestURI();
@@ -145,10 +144,6 @@ public class Controller extends HttpServlet {
     	case("/Manager/managermain.do"):
 			managercommand = new SManagerMainCommand();
 			managercommand.execute(request, response);
-			managercommand1 = new SManagerMainOrdersTodayCommand();
-			managercommand1.execute(request, response);
-			managercommand2 = new SManagerMainSalesTodayCommand();
-			managercommand2.execute(request, response);
 			viewPage = "managerMain.jsp";
 			break;
 			
@@ -175,6 +170,18 @@ public class Controller extends HttpServlet {
 	    	managercommand.execute(request, response);
 	    	viewPage = "managerHistory.jsp";
 	    	break;
+	    	
+    	case("/Manager/usersearchlist.do"):
+    		managercommand = new SManagerUserSearchListCommand();
+    		managercommand.execute(request, response);
+    		viewPage = "managerUserList.do";
+    		break;
+
+    	case("/Manager/productsearchlist.do"):
+    		managercommand = new SManagerProductSearchListCommand();
+    		managercommand.execute(request, response);
+    		viewPage = "managerProductList.do";
+    		break;
 	    	
 	    	
 //			-------------- 오수 --------------------------
@@ -260,16 +267,23 @@ public class Controller extends HttpServlet {
 			viewPage = "main.jsp";
 			break;
 		
-		// 장바구니 상품 삭제
-		case("/Customer/cartListDelete.do"):
-			customercommand = new SCustomerCartListDeleteCommand();
-			customercommand.execute(request, response);
-			viewPage = "customerCartPage.do";
-			break;
+//		// 장바구니 상품 삭제
+//		case("/Customer/cartListDelete.do"):
+//			customercommand = new SCustomerCartListDeleteCommand();
+//			customercommand.execute(request, response);
+//			viewPage = "customerCartPage.do";
+//			break;
 		
 		// 장바구니 선택 상품 삭제하기
 		case("/Customer/selectedProductDelete.do"):
 			customercommand = new SCustomerCartListDeleteCommand();
+			customercommand.execute(request, response);
+			viewPage = "customerCartPage.do";
+			break;
+			
+		// 장바구니 선택 상품 삭제하기
+		case("/Customer/customerBuyList.do"):
+			customercommand = new SCustomerBuyListCommand();
 			customercommand.execute(request, response);
 			viewPage = "customerCartPage.do";
 			break;
