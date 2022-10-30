@@ -33,7 +33,7 @@ import com.jsplec.manager.command.SManagerIdCheckCommand;
 import com.jsplec.manager.command.SManagerLoginCommand;
 import com.jsplec.manager.command.SManagerMainOrdersTodayCommand;
 import com.jsplec.manager.command.SManagerMainSalesTodayCommand;
-import com.jsplec.manager.command.SManagerMainSignTodayCommand;
+import com.jsplec.manager.command.SManagerMainCommand;
 import com.jsplec.manager.command.SManagerMypageDeleteCommand;
 import com.jsplec.manager.command.SManagerMypageUpdateCommand;
 import com.jsplec.manager.command.SManagerProductListCommand;
@@ -143,7 +143,7 @@ public class Controller extends HttpServlet {
 	         
 //			-------------- 예진 --------------------------
     	case("/Manager/managermain.do"):
-			managercommand = new SManagerMainSignTodayCommand();
+			managercommand = new SManagerMainCommand();
 			managercommand.execute(request, response);
 			managercommand1 = new SManagerMainOrdersTodayCommand();
 			managercommand1.execute(request, response);

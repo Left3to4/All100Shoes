@@ -5,14 +5,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jsplec.manager.dao.MMainDao;
 
-public class SManagerMainSalesTodayCommand implements SManagerCommand {
+public class SManagerMainCommand implements SManagerCommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		MMainDao dao = new MMainDao();
-		int result = dao.salesToday();
-		request.setAttribute("SALESTODAY", result);
+		int user = dao.signToday();
+		request.setAttribute("SIGNTODAY", user);
+		
+		int order = dao.ordersToday();
+		request.setAttribute("ORDERSTODAY", order);
+
+		int sales = dao.salesToday();
+		request.setAttribute("SALESTODAY", sales);
+		
 	}
 
 	@Override
