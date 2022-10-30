@@ -13,8 +13,16 @@ public class SManagerProductListCommand implements SManagerCommand {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
+		String select = request.getParameter("select");
+		String content = request.getParameter("content");
+		
+		if (select == null) {
+			select = "productmodel";
+			content = "";
+		}
+		
 		MProductListDao dao = new MProductListDao();
-		ArrayList<MProductDto> dtos = dao.productList();
+		ArrayList<MProductDto> dtos = dao.search(select, content);
 		request.setAttribute("PRODUCTLIST", dtos);
 	}
 

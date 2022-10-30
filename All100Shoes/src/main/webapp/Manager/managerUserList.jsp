@@ -7,13 +7,6 @@
 <meta charset="UTF-8">
 <title>회원 관리</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<script type="text/javascript">
-	function serach() {
-		var form=document.userlist;
-		form.action="usersearchlist.do";
-		form.submit();
-	}
-</script>
 </head>
 <body>
 <%@include file="managerHeader.jsp" %>
@@ -47,7 +40,7 @@
 				</select>&nbsp;&nbsp;&nbsp;
 				
 				<input type = "text" name = "content" size = "30" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-				<input type = "submit" value = "검색" class="btn btn-outline-success" onclick="search()">
+				<input type = "submit" href="/Manager/usersearchlist.do" value = "검색" class="btn btn-outline-success">
 			</form>
 			
 			

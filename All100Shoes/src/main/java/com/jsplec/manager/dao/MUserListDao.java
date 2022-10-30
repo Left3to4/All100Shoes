@@ -29,49 +29,49 @@ public class MUserListDao {
 	}
 	
 	// M
-	public ArrayList<MUserDto> userList(){
-		ArrayList<MUserDto> dtos = new ArrayList<>();
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
-		int i = 0;
-		
-		try {
-			connection = dataSource.getConnection();
-			
-			String query = "select customerid, customername, customerphone, customeraddress, customerinitdate, customerupdatedate, customerdeletedate ";
-			String query1 =	"from customer;";
-			preparedStatement = connection.prepareStatement(query+query1);
-			resultSet = preparedStatement.executeQuery();
-			
-			while(resultSet.next()) {
-				i += 1;
-				int customerseq = i;
-				String customerid = resultSet.getString("customerid");
-				String customername = resultSet.getString("customername");
-				String customerphone = resultSet.getString("customerphone");
-				String customeraddress = resultSet.getString("customeraddress");
-				Date customerinitdate = resultSet.getDate("customerinitdate");
-				Date customerupdatedate = resultSet.getDate("customerupdatedate");
-				Date customerdeletedate = resultSet.getDate("customerdeletedate");
-				
-				MUserDto dto = new MUserDto(customerseq, customerid, customername, customerid, customeraddress, customerinitdate, customerupdatedate, customerdeletedate);
-				dtos.add(dto);
-				}
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			try {
-				if(resultSet != null) resultSet.close();
-				if(preparedStatement != null) preparedStatement.close();
-				if(connection != null) connection.close();
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-		}
-		return dtos;
-	}
+//	public ArrayList<MUserDto> userList(){
+//		ArrayList<MUserDto> dtos = new ArrayList<>();
+//		Connection connection = null;
+//		PreparedStatement preparedStatement = null;
+//		ResultSet resultSet = null;
+//		int i = 0;
+//		
+//		try {
+//			connection = dataSource.getConnection();
+//			
+//			String query = "select customerid, customername, customerphone, customeraddress, customerinitdate, customerupdatedate, customerdeletedate ";
+//			String query1 =	"from customer;";
+//			preparedStatement = connection.prepareStatement(query+query1);
+//			resultSet = preparedStatement.executeQuery();
+//			
+//			while(resultSet.next()) {
+//				i += 1;
+//				int customerseq = i;
+//				String customerid = resultSet.getString("customerid");
+//				String customername = resultSet.getString("customername");
+//				String customerphone = resultSet.getString("customerphone");
+//				String customeraddress = resultSet.getString("customeraddress");
+//				Date customerinitdate = resultSet.getDate("customerinitdate");
+//				Date customerupdatedate = resultSet.getDate("customerupdatedate");
+//				Date customerdeletedate = resultSet.getDate("customerdeletedate");
+//				
+//				MUserDto dto = new MUserDto(customerseq, customerid, customername, customerphone, customeraddress, customerinitdate, customerupdatedate, customerdeletedate);
+//				dtos.add(dto);
+//				}
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			try {
+//				if(resultSet != null) resultSet.close();
+//				if(preparedStatement != null) preparedStatement.close();
+//				if(connection != null) connection.close();
+//			}catch(Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		return dtos;
+//	}
 	
 	// 검색조건에 맞는 회원 리스트 출력
 			public ArrayList<MUserDto> search(String select, String content) {
@@ -101,7 +101,7 @@ public class MUserListDao {
 						Date customerupdatedate = resultSet.getDate("customerupdatedate");
 						Date customerdeletedate = resultSet.getDate("customerdeletedate");
 						
-						MUserDto dto = new MUserDto(customerseq, customerid, customername, customerid, customeraddress, customerinitdate, customerupdatedate, customerdeletedate);
+						MUserDto dto = new MUserDto(customerseq, customerid, customername, customerphone, customeraddress, customerinitdate, customerupdatedate, customerdeletedate);
 						dtos.add(dto);
 						}
 

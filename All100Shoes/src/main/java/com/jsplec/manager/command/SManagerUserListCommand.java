@@ -13,8 +13,16 @@ public class SManagerUserListCommand implements SManagerCommand {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
+		String select = request.getParameter("select");
+		String content = request.getParameter("content");
+		
+		if (select == null) {
+			select = "customerid";
+			content = "";
+		}
+		
 		MUserListDao dao = new MUserListDao();
-		ArrayList<MUserDto> dtos = dao.userList();
+		ArrayList<MUserDto> dtos = dao.search(select, content);
 		request.setAttribute("USERLIST", dtos);
 	}
 

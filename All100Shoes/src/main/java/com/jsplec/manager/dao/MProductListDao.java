@@ -30,45 +30,45 @@ public class MProductListDao {
 	}
 	
 	// M
-	public ArrayList<MProductDto> productList(){
-		ArrayList<MProductDto> dtos = new ArrayList<>();
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
-		
-		try {
-			connection = dataSource.getConnection();
-			
-			String query = "select productid, productbrand, productmodel, productsize, productprice, productstock, productstatus from product";
-			preparedStatement = connection.prepareStatement(query);
-			resultSet = preparedStatement.executeQuery();
-			
-			while(resultSet.next()) {
-				int productseq = resultSet.getInt("productid");
-				String productbrand = resultSet.getString("productbrand");
-				String productmodel = resultSet.getString("productmodel");
-				String productsize = resultSet.getString("productsize");
-				int productprice = resultSet.getInt("productprice");
-				int productstock = resultSet.getInt("productstock");
-				String productstatus = resultSet.getString("productstatus");
-				
-				MProductDto dto = new MProductDto(productseq, productbrand, productmodel, productsize, productprice, productstock, productstatus);
-				dtos.add(dto);
-				}
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			try {
-				if(resultSet != null) resultSet.close();
-				if(preparedStatement != null) preparedStatement.close();
-				if(connection != null) connection.close();
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-		}
-		return dtos;
-	}
+//	public ArrayList<MProductDto> productList(){
+//		ArrayList<MProductDto> dtos = new ArrayList<>();
+//		Connection connection = null;
+//		PreparedStatement preparedStatement = null;
+//		ResultSet resultSet = null;
+//		
+//		try {
+//			connection = dataSource.getConnection();
+//			
+//			String query = "select productid, productbrand, productmodel, productsize, productprice, productstock, productstatus from product";
+//			preparedStatement = connection.prepareStatement(query);
+//			resultSet = preparedStatement.executeQuery();
+//			
+//			while(resultSet.next()) {
+//				int productseq = resultSet.getInt("productid");
+//				String productbrand = resultSet.getString("productbrand");
+//				String productmodel = resultSet.getString("productmodel");
+//				String productsize = resultSet.getString("productsize");
+//				int productprice = resultSet.getInt("productprice");
+//				int productstock = resultSet.getInt("productstock");
+//				String productstatus = resultSet.getString("productstatus");
+//				
+//				MProductDto dto = new MProductDto(productseq, productbrand, productmodel, productsize, productprice, productstock, productstatus);
+//				dtos.add(dto);
+//				}
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			try {
+//				if(resultSet != null) resultSet.close();
+//				if(preparedStatement != null) preparedStatement.close();
+//				if(connection != null) connection.close();
+//			}catch(Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		return dtos;
+//	}
 	
 	// 검색조건에 맞는 상품 리스트 출력
 			public ArrayList<MProductDto> search(String select, String content) {
