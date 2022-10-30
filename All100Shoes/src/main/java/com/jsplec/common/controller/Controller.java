@@ -36,10 +36,8 @@ import com.jsplec.manager.command.SManagerMainCommand;
 import com.jsplec.manager.command.SManagerMypageDeleteCommand;
 import com.jsplec.manager.command.SManagerMypageUpdateCommand;
 import com.jsplec.manager.command.SManagerProductListCommand;
-import com.jsplec.manager.command.SManagerProductSearchListCommand;
 import com.jsplec.manager.command.SManagerSalesListCommand;
 import com.jsplec.manager.command.SManagerUserListCommand;
-import com.jsplec.manager.command.SManagerUserSearchListCommand;
 
 
 /**
@@ -74,7 +72,6 @@ public class Controller extends HttpServlet {
 
 	private void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		HttpSession session = null;
 		String viewPage = null;
 		SManagerCommand managercommand = null;
 		SCustomerCommand customercommand = null;
@@ -170,19 +167,6 @@ public class Controller extends HttpServlet {
 	    	managercommand.execute(request, response);
 	    	viewPage = "managerHistory.jsp";
 	    	break;
-	    	
-    	case("/Manager/usersearchlist.do"):
-    		managercommand = new SManagerUserSearchListCommand();
-    		managercommand.execute(request, response);
-    		viewPage = "managerUserList.do";
-    		break;
-
-    	case("/Manager/productsearchlist.do"):
-    		managercommand = new SManagerProductSearchListCommand();
-    		managercommand.execute(request, response);
-    		viewPage = "managerProductList.do";
-    		break;
-	    	
 	    	
 //			-------------- 오수 --------------------------
 		case("/Customer/customerProductList.do"):
@@ -285,7 +269,7 @@ public class Controller extends HttpServlet {
 		case("/Customer/customerBuyList.do"):
 			customercommand = new SCustomerBuyListCommand();
 			customercommand.execute(request, response);
-			viewPage = "customerCartPage.do";
+			viewPage = "customerBuyList.jsp";
 			break;
 		
 		}
