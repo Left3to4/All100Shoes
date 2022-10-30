@@ -29,10 +29,11 @@ public class SCustomerCartListDeleteDao {
 			connection = dataSource.getConnection();
 			
 			for(int i = 0; i < orderid.length; i++) {
+				
 				String query = "delete from orders where orderid = ?";
 				preparedStatement = connection.prepareStatement(query);
 				
-				preparedStatement.setString(1, orderid[i+1]);
+				preparedStatement.setString(1, orderid[i]);
 				
 				preparedStatement.executeUpdate();
 			}

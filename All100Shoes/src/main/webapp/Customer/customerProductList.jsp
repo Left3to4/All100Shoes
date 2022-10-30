@@ -119,31 +119,10 @@
 <body>
 
 	<%@include file="header.jsp"%>
-
-	<header class="site-header sticky-top py-1">
-		<nav
-			class="container d-flex flex-column flex-md-row justify-content-between">
-			<a class="py-2" href="#" aria-label="Product"> <svg
-					xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-					fill="none" stroke="currentColor" stroke-linecap="round"
-					stroke-linejoin="round" stroke-width="2" class="d-block mx-auto"
-					role="img" viewBox="0 0 24 24">
-					<title>Product</title><circle cx="12" cy="12" r="10" />
-					<path
-						d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" /></svg>
-			</a> <a class="py-2 d-none d-md-inline-block" href="#">Tour</a> <a
-				class="py-2 d-none d-md-inline-block" href="#">Product</a> <a
-				class="py-2 d-none d-md-inline-block" href="#">Features</a> <a
-				class="py-2 d-none d-md-inline-block" href="#">Enterprise</a> <a
-				class="py-2 d-none d-md-inline-block" href="#">Support</a> <a
-				class="py-2 d-none d-md-inline-block" href="#">Pricing</a> <a
-				class="py-2 d-none d-md-inline-block" href="#">Cart</a>
-		</nav>
-	</header>
 	
  <form action="customerProductList.do">
 		검색 선택 : 
-			<select name="pbrand">
+			<select name="query">
 				<option value="productmodel" selected="selected">model</option>
 				<option value="productbrand">brand</option>
 			</select>&nbsp;&nbsp;&nbsp;
@@ -153,7 +132,52 @@
 
 	<main>
 	
-	<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+<!-- 	<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-5 fw-semibold">Collapsible</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+      <a href="customerProductList.do">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          All
+        </button>
+      </a>
+      </li>
+      <li class="mb-1">
+      <a>
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+          Nike
+        </button>
+      </a>
+        <div class="collapse" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="customerProductListCategory.do?pbrand=nike&pcategory=sneakers" class="link-dark d-inline-flex text-decoration-none rounded">sneakers</a></li>
+            <li><a href="customerProductListCategory.do?pbrand=nike&pcategory=running" class="link-dark d-inline-flex text-decoration-none rounded">running</a></li>
+            <li><a href="customerProductListCategory.do?pbrand=nike&pcategory=basketball" class="link-dark d-inline-flex text-decoration-none rounded">basketball</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Adidas
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="customerProductListCategory.do?pbrand=adidas&pcategory=sneakers" class="link-dark d-inline-flex text-decoration-none rounded">sneakers</a></li>
+            <li><a href="customerProductListCategory.do?pbrand=adidas&pcategory=running" class="link-dark d-inline-flex text-decoration-none rounded">running</a></li>
+            <li><a href="customerProductListCategory.do?pbrand=adidas&pcategory=basketball" class="link-dark d-inline-flex text-decoration-none rounded">basketball</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div> -->
+	
+		<div class="row">
+		
+		
+		<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
     <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-5 fw-semibold">Collapsible</span>
@@ -194,8 +218,8 @@
       </li>
     </ul>
   </div>
-	
-		<div class="row">
+		
+		
 			
 			<c:forEach items="${productList}" var="dto">
 				<div class="col">

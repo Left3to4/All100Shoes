@@ -1,6 +1,5 @@
 package com.jsplec.manager.dto;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 public class MUserDto {
@@ -9,25 +8,25 @@ public class MUserDto {
 	int customerseq;
 	String customerid;
 	String customername;
-	String customerphone;
+	String customrephone;
 	String customeraddress;
-	Date customerinitdate;
-	Date customerupdatedate;
-	Date customerdeletedate;
+	Timestamp customerinitdate;
+	Timestamp customerupdatedate;
+	Timestamp customerdeletedate;
 	
 	// C
 	public MUserDto() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MUserDto(int customerseq, String customerid, String customername, String customerphone, String customeraddress,
-			Date customerinitdate, Date customerupdatedate, Date customerdeletedate) {
+	public MUserDto(int customerseq, String customerid, String customername, String customrephone, String customeraddress,
+			Timestamp customerinitdate, Timestamp customerupdatedate, Timestamp customerdeletedate) {
 		super();
 		
 		this.customerseq = customerseq;
 		this.customerid = customerid;
 		this.customername = customername;
-		this.customerphone = customerphone;
+		this.customrephone = customrephone;
 		this.customeraddress = customeraddress;
 		this.customerinitdate = customerinitdate;
 		this.customerupdatedate = customerupdatedate;
@@ -59,12 +58,12 @@ public class MUserDto {
 		this.customername = customername;
 	}
 
-	public String getCustomerphone() {
-		return customerphone;
+	public String getCustomrephone() {
+		return customrephone;
 	}
 
-	public void setCustomerphone(String customrephone) {
-		this.customerphone = customrephone;
+	public void setCustomrephone(String customrephone) {
+		this.customrephone = customrephone;
 	}
 
 	public String getCustomeraddress() {
@@ -75,27 +74,27 @@ public class MUserDto {
 		this.customeraddress = customeraddress;
 	}
 
-	public Date getCustomerinitdate() {
+	public Timestamp getCustomerinitdate() {
 		return customerinitdate;
 	}
 
-	public void setCustomerinitdate(Date customerinitdate) {
+	public void setCustomerinitdate(Timestamp customerinitdate) {
 		this.customerinitdate = customerinitdate;
 	}
 
-	public Date getCustomerupdatedate() {
+	public Timestamp getCustomerupdatedate() {
 		return customerupdatedate;
 	}
 
-	public void setCustomerupdatedate(Date customerupdatedate) {
+	public void setCustomerupdatedate(Timestamp customerupdatedate) {
 		this.customerupdatedate = customerupdatedate;
 	}
 
-	public Date getCustomerdeletedate() {
+	public Timestamp getCustomerdeletedate() {
 		return customerdeletedate;
 	}
 
-	public void setCustomerdeletedate(Date customerdeletedate) {
+	public void setCustomerdeletedate(Timestamp customerdeletedate) {
 		this.customerdeletedate = customerdeletedate;
 	}
 	

@@ -38,24 +38,10 @@
 	form.submit();
  }
  
- function selectedDelete(orderid) {
+ function selectedDelete(){
 	var form=document.cart;
-	
-	if (!confirm("삭제 하시겠습니까?")) {
-    } else {
- 		form.action="selectedProductDelete.do?orderid=" + orderid;
- 		form.submit();
-    }
- }
- 
- function test(orderid) {
-   	 var form=document.cart;
-   	 
-     if (!confirm("삭제 하시겠습니까?")) {
-     } else {
-	   		form.action="cartListDelete.do?orderid=" + orderid;
-	   		form.submit();
-     }
+	form.action="selectedProductDelete.do";
+	form.submit();
  }
  
 </script>
@@ -83,8 +69,7 @@ crossorigin="anonymous">
 	
 	<div class="container text-center">
 		<form action="customerCartPage.do" name = "cart" method = "post">
-			<button style="position: absolute; right: 150px; top: 170px;"
-			type = "button" class="btn btn-dark" onclick="selectedDelete(${dto.orderid })">선택 상품 삭제</button>
+			<button style="position: absolute; right: 150px; top: 170px;" type = "button" class="btn btn-dark" onclick="selectedDelete()">선택 상품 삭제</button>
 			<table class="table">
 				<thead>
 				    <tr>
@@ -107,9 +92,9 @@ crossorigin="anonymous">
 							<td><input type = "hidden" value = "${dto.productsize}">${dto.productsize}</td>
 					    	<td><input type = "hidden" value = "${dto.orderquantity}">${dto.orderquantity}</td>
 							<td>
-							<%-- 	<a href = "cartListDelete.do?orderid=${dto.orderid }"> --%>
-							<button onclick="test(${dto.orderid })" type = "button" class="btn btn-dark" style = "height: 20px; font-size: 15px; align: center;">삭제</button>
-								<!-- </a> -->
+								<a href = "cartListDelete.do?orderid=${dto.orderid }">
+									<button type = "button" class="btn btn-dark" style = "height: 20px; font-size: 15px; align: center;">삭제</button>
+								</a>
 							</td>
 					    </tr>
 		 			</tbody>

@@ -5,17 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ID 찾기</title>
+<title>Insert title here</title>
 </head>
 <body>
-<div align="center">
 <c:if test="${MANAGERID==null }">
-<h2 style="margin:20px">ID를 찾을 수 없습니다.</h2>
+ID를 찾을 수 없습니다.
 </c:if>
 <c:if test="${MANAGERID!=null }">
-<h2 style="margin:20px">ID는 ${MANAGERID }입니다.</h2>
+ID는 ${MANAGERID }입니다.
 </c:if>
-<a href="managerlogin.jsp">로그인 화면으로</a>
-</div>
 </body>
 </html>

@@ -1,9 +1,9 @@
 package com.jsplec.manager.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import javax.naming.Context;
@@ -40,7 +40,7 @@ public class MUserListDao {
 			connection = dataSource.getConnection();
 			
 			String query = "select customerid, customername, customerphone, customeraddress, customerinitdate, customerupdatedate, customerdeletedate ";
-			String query1 =	"from customer order by customerinitdate desc";
+			String query1 =	"from customer;";
 			preparedStatement = connection.prepareStatement(query+query1);
 			resultSet = preparedStatement.executeQuery();
 			
@@ -51,9 +51,9 @@ public class MUserListDao {
 				String customername = resultSet.getString("customername");
 				String customerphone = resultSet.getString("customerphone");
 				String customeraddress = resultSet.getString("customeraddress");
-				Date customerinitdate = resultSet.getDate("customerinitdate");
-				Date customerupdatedate = resultSet.getDate("customerupdatedate");
-				Date customerdeletedate = resultSet.getDate("customerdeletedate");
+				Timestamp customerinitdate = resultSet.getTimestamp("customerinitdate");
+				Timestamp customerupdatedate = resultSet.getTimestamp("customerupdatedate");
+				Timestamp customerdeletedate = resultSet.getTimestamp("customerdeletedate");
 				
 				MUserDto dto = new MUserDto(customerseq, customerid, customername, customerid, customeraddress, customerinitdate, customerupdatedate, customerdeletedate);
 				dtos.add(dto);
