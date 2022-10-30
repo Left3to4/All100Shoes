@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.divPosition{
+	background-color : #BBAEAE;
+ 	border:1px solid #5D5D5D;
+ 	position:adsolute;
+ 	height:600px;
+ 	width:1200px;
+ 	top:50%;
+ 	left:50%;
+ 	padding:5px;
+}
+#wrap{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  min-height: 50vh;
+}
