@@ -29,7 +29,7 @@
 				
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="align-items: center">
 			<form action= "userlist.do" class="d-flex" role="search">
-				<select name = "customer">
+				<select name = "select">
 					<option value = "id">아이디</option>
 					<option value = "name">이름</option>
 					<option value = "phone" selected = "selected">전화번호</option>
@@ -66,6 +66,7 @@
 		<c:forEach items = "${USERLIST}" var = "dto">
 				<tr>
 					<td>${dto.customerseq}</td>
+					<td>${dto.customerid}</td>
 					<td>${dto.customername}</td>
 					<td>${dto.customerphone}</td>
 					<td>${dto.customeraddress}</td>

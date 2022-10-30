@@ -29,7 +29,7 @@
 				
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="align-items: center">
 			<form action= "history.do" class="d-flex" role="search">
-				<select name = "history">
+				<select name = "select">
 					<option value = "model" selected = "selected">제품명</option>
 					<option value = "size">사이즈</option>
 					<option value = "orderdate">주문일</option>

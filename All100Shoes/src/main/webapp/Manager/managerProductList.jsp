@@ -29,7 +29,7 @@
 				
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="align-items: center">
 			<form action= "productlist.do" class="d-flex" role="search">
-				<select name = "product">
+				<select name = "select">
 					<option value = "brand">브랜드</option>
 					<option value = "model" selected = "selected">제품명</option>
 					<option value = "size">사이즈</option>

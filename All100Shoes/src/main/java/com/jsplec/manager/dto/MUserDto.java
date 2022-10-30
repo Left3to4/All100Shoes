@@ -1,5 +1,6 @@
 package com.jsplec.manager.dto;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class MUserDto {
@@ -10,9 +11,9 @@ public class MUserDto {
 	String customername;
 	String customrephone;
 	String customeraddress;
-	Timestamp customerinitdate;
-	Timestamp customerupdatedate;
-	Timestamp customerdeletedate;
+	Date customerinitdate;
+	Date customerupdatedate;
+	Date customerdeletedate;
 	
 	// C
 	public MUserDto() {
@@ -20,7 +21,7 @@ public class MUserDto {
 	}
 
 	public MUserDto(int customerseq, String customerid, String customername, String customrephone, String customeraddress,
-			Timestamp customerinitdate, Timestamp customerupdatedate, Timestamp customerdeletedate) {
+			Date customerinitdate, Date customerupdatedate, Date customerdeletedate) {
 		super();
 		
 		this.customerseq = customerseq;
@@ -74,27 +75,27 @@ public class MUserDto {
 		this.customeraddress = customeraddress;
 	}
 
-	public Timestamp getCustomerinitdate() {
+	public Date getCustomerinitdate() {
 		return customerinitdate;
 	}
 
-	public void setCustomerinitdate(Timestamp customerinitdate) {
+	public void setCustomerinitdate(Date customerinitdate) {
 		this.customerinitdate = customerinitdate;
 	}
 
-	public Timestamp getCustomerupdatedate() {
+	public Date getCustomerupdatedate() {
 		return customerupdatedate;
 	}
 
-	public void setCustomerupdatedate(Timestamp customerupdatedate) {
+	public void setCustomerupdatedate(Date customerupdatedate) {
 		this.customerupdatedate = customerupdatedate;
 	}
 
-	public Timestamp getCustomerdeletedate() {
+	public Date getCustomerdeletedate() {
 		return customerdeletedate;
 	}
 
-	public void setCustomerdeletedate(Timestamp customerdeletedate) {
+	public void setCustomerdeletedate(Date customerdeletedate) {
 		this.customerdeletedate = customerdeletedate;
 	}
 	
