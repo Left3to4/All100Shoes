@@ -88,9 +88,47 @@
 	<%@include file="managerHeader.jsp" %>
 	
 	<main>
-		<form action="managermain.do" name="main" method="post">
+	
+	<form action="managermain.do" name="main" method="post">
+		<div class="row">
+		<div class="col-4" align="center">
+			<div class="card text-bg-light mb-3" style="width: 500px; height:500px;">
+			<!-- <div class="card-header">Header</div> -->
+				<div class="card-body">
+					<h1 class="card-title" align="center">오늘 가입한 고객 수</h1>
+					<br><br><br><br><br><br>
+					<h2 class="card-text" align="center">${SIGNTODAY}명</h2>
+				</div>
+			</div>
+		</div>
+			<div class="col-4" align="center">
+			<div class="card text-bg-light mb-3" style="width: 500px; height:500px;">
+			<!-- <div class="card-header">Header</div> -->
+				<div class="card-body">
+					<h1 class="card-title" align="center">오늘 판매 건수</h1>
+					<br><br><br><br><br><br>
+					<h2 class="card-text" align="center">${ORDERSTODAY}건</h2>
+				</div>
+			</div>
+			</div>
+
+			<div class="col-4" align="center">
+			<div class="card text-bg-light mb-3" style="width: 500px; height:500px;">
+			<!-- <div class="card-header">Header</div> -->
+				<div class="card-body">
+					<h1 class="card-title" align="center">오늘 매출</h1>
+					<br><br><br><br><br><br>
+					<h2 class="card-text" align="center">${SALESTODAY}원</h2>
+				</div>
+			</div>
+			</div>
+			
+		</div>
+	</form>
+	
+	
+<%-- 		<form action="managermain.do" name="main" method="post">
 			<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-			<div class="col-lg-3 col-md-3">
 				<div
 					class="text bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 					<div class="my-3 py-3">
@@ -101,9 +139,7 @@
 						<p class="lead">${SIGNTODAY}</p>
 					</div>
 				</div>
-			</div>
 			
-			<div class="col-lg-3 col-md-3">
 				<div
 					class="text bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 					<div class="my-3 py-3">
@@ -114,8 +150,6 @@
 						<p class="lead">${ORDERSTODAY}</p>
 					</div>
 				</div>
-				</div>
-				<div class="col-lg-3 col-md-3">
 				<div class="text bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 					<div class="my-3 py-3">
 						<h2 class="display-5">오늘 매출</h2>
@@ -124,10 +158,10 @@
 						style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; background: #c5cae9">
 						<p class="lead">${SALESTODAY}</p>
 					</div>
-					</div>
 				</div>
 			</div>
-		</form>
+		</form> --%>
+		
 	</main>
 	
 	<script
