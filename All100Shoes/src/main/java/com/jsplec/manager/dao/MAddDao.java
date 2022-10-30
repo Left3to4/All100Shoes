@@ -134,7 +134,8 @@ public class MAddDao {
 			ps = connection.prepareStatement(query);
 			ps.setString(1, managerpw);
 			ps.setString(2, managername);
-			ps.setString(3, managerid);
+			ps.setString(3, managerphone);
+			ps.setString(4, managerid);
 			ps.executeUpdate();
 
 		} catch (Exception e) {
