@@ -220,7 +220,7 @@
 		<div class="row">
 			
 			<c:forEach items="${productList}" var="dto">
-				<div class="col">
+				<div class="col-lg-2 col-md-4">
 					<div class="card" style="width: 14rem;">
 					<a href="productDetail.do?productmodel=${dto.productmodel}">
 						<img src="./productListImage/practice.png" class="card-img-top"
