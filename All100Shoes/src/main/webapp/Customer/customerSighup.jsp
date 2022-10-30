@@ -21,38 +21,6 @@
 <div id="wrap" >
 <script type="text/javascript">
 
-function fn_joinMenber(){
-	var joinForm = document.joinForm;
-	var name 	= document.name.value;
-	var id		= document.id.value;
-	var pwd	 	= document.pwd.value;
-	var rePwd	 = document.rePwd.value;
-	var email	 = document.email.value;
-	
-	if(name.length==0 || name==""){
-		alert("이름은 입력해주세요");
-		joinForm.name.focus();
-	}else if(id.length==0 || id==""){
-		alert("아이디를 입력해주세요.")
-		joinForm.id.focus();
-	}else if(joinForm.idDuplication.value!="idCheck"){
-		alert("아이디 중복체크를 해주세요");
-	}else if(pwd.length==0 || pwd==""){
-		alert("비밀번호를 입력해주세요");
-		joinForm.pwd.focus();
-	}else if(rePwd.length==0 || rePwd ==""){
-		alert("비밀번호를 다시 입력해주세요")
-		joinForm.rePwd.focus();
-	}else if(rePwd!=pwd){
-		alert("입력하신 비밀번호가 틀립니다.");
-		joinForm.rePwd.focus();
-	}else {
-		joinForm.method="post";
-		joinForm.action="${contextPath}/member/joinMember.do"
-	}
-	
-	form.submit();
-}
 
 	function CheckId(){
 		var joinForm = document.joinForm;
@@ -61,18 +29,16 @@ function fn_joinMenber(){
 		}
 	
 	function snedCheckVAlue(){
-		var openJoinfrm = document.joinFrom;
+		var joinForm = document.joinFrom;
 		
-		if(document.chResult.value =="N"){
-			alert("다른 아이디를 입력해주세요.");
-			openJoinfrm.id.focus();
+		var inCehckValue = document.getElementById("idBuplication").value;
+		
+		if(idCheckValue == false){
+			joinFrom.action = "Sighup.do":
+			joinFrom.method = "post";
+			joinFrom.submit();
 		}else{
-			openJoinfrm.idDuplication.value="idCheck";
-			openJoinfrm.idcheck.disabled=true;
-			openJoinfrm.idcheck.style.opacity=0.6;
-			openJoinfrm.idcheck.style.cursor="default";
-			joinForm.action="Sighup.do";
-			joinForm.submit();
+			alert("아이디 중복체크를 해주세요.")
 		}
 	}
 
@@ -82,18 +48,16 @@ function fn_joinMenber(){
 </script>
 	
 
-<form action="Sighup.do" method="post" name ="joinForm" >
+<form name ="joinForm" action="Sighup.do" method ="post">
 		<table border="0" align="center" >
 		
 			<tr>
 				<td>ID</td>
 				<td><input type="text" name="id" size ="30" value="${CHECKID }" >
-				<button type="submit" name="idcheck" class="btn btn-dark" class="checkId" onclick="CheckId()" >중복 확인</button></td>
-				<c:if test="${CHECK==true }">사용할 수 없는 ID입니다.
-				</c:if>
-				<c:if test="${CHECK==false }">사용 가능한 ID입니다.
-				</c:if>
-				<td><input type="hidden" name="idDuplication" value="idUncheck"/></td>
+				<button type="button" name="idcheck" class="btn btn-dark" class="checkId" onclick="CheckId()" >중복 확인</button></td>
+				<c:if test="${CHECK==true }">사용할 수 없는 ID입니다.</c:if>
+				<c:if test="${CHECK==false }">사용 가능한 ID입니다.</c:if>
+				<td><input type="hidden" name="idDuplication" id="idDuplication" value="${CHECK}"/></td>
 			</tr>
 			<tr>
 				<td>pw</td>
@@ -119,7 +83,7 @@ function fn_joinMenber(){
 
 			</tr>
 			<tr>
-			<td><input class="btn btn-dark" type="submit" onclick="snedCheckVAluein()" value="회원가입"></td>
+			<td><input class="btn btn-dark" type="submit" onclick="snedCheckVAlue()" value="회원가입"></td>
 			<td><button type="submit" class="btn btn-dark" onclick="login.jsp">돌아가기</button></td>
 				</tr>
 		
@@ -127,7 +91,7 @@ function fn_joinMenber(){
 	</form>
 
 
-}
+
 
   </div>
 </div>

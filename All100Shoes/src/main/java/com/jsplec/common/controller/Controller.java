@@ -195,6 +195,7 @@ public class Controller extends HttpServlet {
 			break;
 			
 		case("/Customer/idcheck.do"):
+			System.out.println("qjq");
 			customercommand=new SCustomerIdCheckCommand();
 			customercommand.execute(request, response);
 	        viewPage="customerSighup.jsp";

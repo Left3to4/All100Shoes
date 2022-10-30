@@ -39,6 +39,11 @@ function customerFindpw(){
 	form.action="http://localhost:8080/All100Shoes/Customer/customerFindpw.jsp";
 	form.submit();
 }
+function managerlogin(){
+	var form=document.login;
+	form.action="http://localhost:8080/All100Shoes/Manager/managerlogin.jsp";
+	form.submit();
+}
 </script>
 
 

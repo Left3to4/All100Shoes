@@ -42,7 +42,9 @@
 		</tr>
 		<tr>
 			<td>
-		<a href="http://localhost:8080/All100Shoes/Customer/login.jsp">login이동</a>
+		<button type="button" name="bt" >
+	 	<a href="http://localhost:8080/All100Shoes/Customer/login.jsp">login이동</a>
+		 </button>	</td><td>
 		<input type="submit" value="아이디확인" onclick= "FindId()"  >
 			</td>
 		</tr>

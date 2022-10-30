@@ -8,7 +8,12 @@
 
 
 <a href = "customerProductList.do"><img src="sport-shoe.png" style="width: 80px; margin-left: 30px;" /></a>
-
+<script type="text/javascript">
+function signup() {
+	var form=document.loginbtn;
+	form.action="http://localhost:8080/All100Shoes/Customer/customerSighup.jsp";
+	form.submit();
+}</script>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

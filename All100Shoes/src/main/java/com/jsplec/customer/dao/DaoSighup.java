@@ -34,14 +34,12 @@ public class DaoSighup {
 		
 //			String loginId = null;
 
-			String query = "select count(*) from customer "; // 마지막 띄워주기
-			String query2 = "where shoespj.customerid = ? and customerdeletedate is null";
+			String query = "select count(*) from shoespj.customer where customerid = ? and customerdeletedate is null "; // 마지막 띄워주기
 
 			try {connection = dataSource.getConnection();
-			preparedStatement = connection.prepareStatement(query+query2);
+			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, customerid);
 			resultSet = preparedStatement.executeQuery();
-			
 				if (resultSet.next()) { // true값일때만 가져온다
 					checked = resultSet.getInt(1);
 					
