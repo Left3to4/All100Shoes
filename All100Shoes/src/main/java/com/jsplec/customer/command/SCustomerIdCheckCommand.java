@@ -13,7 +13,6 @@ public class SCustomerIdCheckCommand implements SCustomerCommand {
 		String customerid=request.getParameter("id");
 		DaoSighup dao=new DaoSighup();
 		boolean check=dao.checkId(customerid);
-		System.out.println(customerid);
 		request.setAttribute("CHECK", check);
 		request.setAttribute("CHECKID", customerid);
 		

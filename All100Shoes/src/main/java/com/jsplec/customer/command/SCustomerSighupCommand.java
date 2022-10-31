@@ -11,7 +11,7 @@ public class SCustomerSighupCommand implements SCustomerCommand {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		String customerid = request.getParameter("customerid");
+		String customerid = request.getParameter("id");
 		String customerpw = request.getParameter("pw");
 		String customername = request.getParameter("name");
 		String customeraddress = request.getParameter("address");

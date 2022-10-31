@@ -9,6 +9,36 @@
 <title>회원 가입</title>
 <link rel= "stylesheet" href="signup.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script type="text/javascript">
+
+
+	function CheckId(){
+		var joinForm = document.joinForm;
+		joinForm.action="idcheck2.do";
+		joinForm.submit();
+	}
+	
+	function snedCheckVAlue(){
+		var joinForm = document.joinForm;
+		
+		var idCheckValue =joinForm.idDuplication.value;
+		console.log(idCheckValue);
+		if(idCheckValue == false){
+			joinForm.action = "Sighup.do";
+			joinForm.method = "post";
+			joinForm.submit();
+			return;
+		}
+		else{
+			alert("아이디 중복체크를 해주세요.")
+			return;
+		}
+	}
+
+</script>
+
+
 </head>
 
 <%@include file="header.jsp"%>
@@ -19,45 +49,21 @@
 
 	<h2 align="center">회원가입 게시판</h2> 
 <div id="wrap" >
-<script type="text/javascript">
 
-
-	function CheckId(){
-		var joinForm = document.joinForm;
-		joinForm.action="idcheck.do";
-		joinForm.submit();
-		}
-	
-	function snedCheckVAlue(){
-		var joinForm = document.joinFrom;
-		
-		var inCehckValue = document.getElementById("idBuplication").value;
-		
-		if(idCheckValue == false){
-			joinFrom.action = "Sighup.do":
-			joinFrom.method = "post";
-			joinFrom.submit();
-		}else{
-			alert("아이디 중복체크를 해주세요.")
-		}
-	}
-
-	}
-}
-}
-</script>
 	
 
-<form name ="joinForm" action="Sighup.do" method ="post">
-		<table border="0" align="center" >
+<form name ="joinForm" method ="post">
+		<table border="0" >
 		
 			<tr>
 				<td>ID</td>
 				<td><input type="text" name="id" size ="30" value="${CHECKID }" >
-				<button type="button" name="idcheck" class="btn btn-dark" class="checkId" onclick="CheckId()" >중복 확인</button></td>
-				<c:if test="${CHECK==true }">사용할 수 없는 ID입니다.</c:if>
+				<input type="button" name="idcheck" class="btn btn-dark" value="중복 확인" onclick="CheckId()" ></td>
+				<c:if test="${CHECK==true }">이미 존재하는 ID입니다.</c:if>
 				<c:if test="${CHECK==false }">사용 가능한 ID입니다.</c:if>
-				<td><input type="hidden" name="idDuplication" id="idDuplication" value="${CHECK}"/></td>
+				
+
+				<td><input type="hidden" name="idDuplication" value="${CHECK}"/></td>
 			</tr>
 			<tr>
 				<td>pw</td>
@@ -83,7 +89,7 @@
 
 			</tr>
 			<tr>
-			<td><input class="btn btn-dark" type="submit" onclick="snedCheckVAlue()" value="회원가입"></td>
+			<td><input class="btn btn-dark" type="button" onclick="snedCheckVAlue()" value="회원가입"></td>
 			<td><button type="submit" class="btn btn-dark" onclick="login.jsp">돌아가기</button></td>
 				</tr>
 		
