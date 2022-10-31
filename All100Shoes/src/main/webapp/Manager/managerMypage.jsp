@@ -34,7 +34,7 @@ function pwcheck(){
 }
 
 var regExId=/^[a-z|0-9]+$/; //영문 소문자와 숫자만 한 글자 이상
-var regExPw=/^[a-z|0-9]+$/; //영문 소문자와 숫자만 한 글자 이상
+var regExPw=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 var regExPhone=/^[0-9]+$/; //숫자만 한 글자 이상
 
 function updateaction(){
@@ -44,7 +44,7 @@ function updateaction(){
 	var phone=form.managerphone.value;
 	
 	if(!regExPw.test(pw)){
-		alert("비밀번호는 영문과 숫자만 입력 가능합니다.");
+		alert("비밀번호는 영문 대소문자, 숫자, 특수문자를 모두 포함해야 합니다.");
 		return;
 	}
 	if(!regExPhone.test(phone)){
