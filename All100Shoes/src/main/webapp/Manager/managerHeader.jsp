@@ -8,7 +8,7 @@
 <script type="text/javascript">
 	function logout() {
 		var form = document.loginokay;
-		form.action = "http://localhost:8080/All100Shoes/Customer/main.jsp?id=null";
+		form.action = "login.do";
 		sessionStorage.clear();
 		form.submit();
 		
