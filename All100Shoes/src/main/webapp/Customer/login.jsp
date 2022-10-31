@@ -19,7 +19,7 @@
 <script type="text/javascript">
 function backtomain(){
 	var form=document.login;
-	form.action="main.jsp";
+	form.action="customerProductList.do";
 	form.submit();
 }
 

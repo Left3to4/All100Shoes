@@ -251,13 +251,6 @@ public class Controller extends HttpServlet {
 			viewPage = "main.jsp";
 			break;
 		
-//		// 장바구니 상품 삭제
-//		case("/Customer/cartListDelete.do"):
-//			customercommand = new SCustomerCartListDeleteCommand();
-//			customercommand.execute(request, response);
-//			viewPage = "customerCartPage.do";
-//			break;
-		
 		// 장바구니 선택 상품 삭제하기
 		case("/Customer/selectedProductDelete.do"):
 			customercommand = new SCustomerCartListDeleteCommand();
