@@ -22,9 +22,10 @@
 	function snedCheckVAlue(){
 		var joinForm = document.joinForm;
 		
-		var idCheckValue =joinForm.idDuplication.value;
+		var idCheckValue = joinForm.idDuplication.value;
 		console.log(idCheckValue);
-		if(idCheckValue == false){
+		
+		if(idCheckValue == 1){
 			joinForm.action = "Sighup.do";
 			joinForm.method = "post";
 			joinForm.submit();
@@ -60,10 +61,11 @@
 				<td><input type="text" name="id" size ="30" value="${CHECKID }" >
 				<input type="button" name="idcheck" class="btn btn-dark" value="중복 확인" onclick="CheckId()" ></td>
 				<c:if test="${CHECK==true }">이미 존재하는 ID입니다.</c:if>
-				<c:if test="${CHECK==false }">사용 가능한 ID입니다.</c:if>
+				<c:if test="${CHECK==false }">사용 가능한 ID입니다.
+				<td><input type="hidden" name="idDuplication" value="1"/></td></c:if>
 				
 
-				<td><input type="hidden" name="idDuplication" value="${CHECK}"/></td>
+				
 			</tr>
 			<tr>
 				<td>pw</td>
