@@ -38,14 +38,16 @@ public class MHistoryDao {
 		
 		try {
 			connection = dataSource.getConnection();
+			int i = 0;
 			
-			String query = "select b.buyid, p.productmodel, p.productsize, b.buyquantity, b.buyprice, b.buyorderdate from product p, buy b ";
+			String query = "select p.productmodel, p.productsize, b.buyquantity, b.buyprice, b.buyorderdate from product p, buy b ";
 			String query1 = "where " + select + " like '%" + content + "%' and p.productid = b.productid order by b.buyorderdate desc";
 			preparedStatement = connection.prepareStatement(query+query1);
 			resultSet = preparedStatement.executeQuery();
 			
 			while(resultSet.next()) {
-				int buyid = resultSet.getInt("b.buyid");
+				i += 1;
+				int buyid = i;
 				String productmodel = resultSet.getString("p.productmodel");
 				String productsize = resultSet.getString("p.productsize");
 				int buyquantity = resultSet.getInt("b.buyquantity");
