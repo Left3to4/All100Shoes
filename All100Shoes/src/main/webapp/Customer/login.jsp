@@ -19,7 +19,7 @@
 <script type="text/javascript">
 function backtomain(){
 	var form=document.login;
-	form.action="main.jsp";
+	form.action="customerProductList.do";
 	form.submit();
 }
 
@@ -111,8 +111,8 @@ function managerlogin(){
 <!-- Custom styles for this template -->
 <link href="signin.css" rel="stylesheet">
 </head>
-<%@include file="header.jsp"%>
 <body class="text-center">
+
 	<main class="form-signin w-100 m-auto">
 		<form action="login.do" name="login" method="post">
 			<h1 class="h3 mb-3 fw-normal">로그인</h1>

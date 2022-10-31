@@ -24,6 +24,7 @@ import com.jsplec.customer.command.SCustomerProductClickCommand;
 import com.jsplec.customer.command.SCustomerProductListCategoryCommand;
 import com.jsplec.customer.command.SCustomerProductListCommand;
 import com.jsplec.customer.command.SCustomerSelectedBuyCommand;
+import com.jsplec.customer.command.SCustomerSighupCommand;
 import com.jsplec.manager.command.MMypageShowInfoCommand;
 import com.jsplec.manager.command.SManagerAddCommand;
 import com.jsplec.manager.command.SManagerCommand;
@@ -194,7 +195,7 @@ public class Controller extends HttpServlet {
 			}
 			break;
 			
-		case("/Customer/idcheck.do"):
+		case("/Customer/idcheck2.do"):
 			customercommand=new SCustomerIdCheckCommand();
 			customercommand.execute(request, response);
 	        viewPage="customerSighup.jsp";
@@ -212,7 +213,11 @@ public class Controller extends HttpServlet {
 			viewPage = "customerFindpw.jsp";
 			break;
 			
-		
+		case("/Customer/Sighup.do"):
+			customercommand = new SCustomerSighupCommand();
+			customercommand.execute(request, response);
+			viewPage = "login.jsp";	
+			break;
 			
 //			-------------- 한별 --------------------------
 		
