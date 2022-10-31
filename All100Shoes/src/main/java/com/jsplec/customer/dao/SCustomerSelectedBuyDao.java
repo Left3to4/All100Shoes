@@ -49,5 +49,35 @@ public class SCustomerSelectedBuyDao {
 			}
 		}
 	} // selectedBuy() --
+
+	public void buyProductStockUpdate(String productmodel, String productsize, int orderquantity) {
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			connection = dataSource.getConnection();
+			
+				
+				String query = "update product set productstock = productstock - ? where productmodel = ? and productsize = ?";
+				preparedStatement = connection.prepareStatement(query);
+				
+				preparedStatement.setInt(1, orderquantity);
+				preparedStatement.setString(2, productmodel);
+				preparedStatement.setString(3, productsize);
+				
+				preparedStatement.executeUpdate();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	} // selectedBuy() --
 	
 }

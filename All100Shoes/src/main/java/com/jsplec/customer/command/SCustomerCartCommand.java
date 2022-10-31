@@ -14,7 +14,6 @@ public class SCustomerCartCommand implements SCustomerCommand {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
-		HttpSession session = request.getSession();
 		SCustomerCartDao dao = new SCustomerCartDao();
 
 		int productsize = Integer.parseInt(request.getParameter("productsize"));
@@ -38,10 +37,8 @@ public class SCustomerCartCommand implements SCustomerCommand {
 			}
 		}
 		if(index > 0) {
-			System.out.println("hi");
 			dao.cartUpdate(productid, productstock, request);
 		} else {
-			System.out.println("HELLO");
 			dao.cartInsert(productid, productprice, productstock, request);
 			
 		}

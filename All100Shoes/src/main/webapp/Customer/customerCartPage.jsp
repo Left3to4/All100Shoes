@@ -102,15 +102,11 @@ crossorigin="anonymous">
 	    			<tbody>
 					    <tr>
 					    	<td><input type = "checkbox" name = "orderid" value = "${dto.orderid }"></td>
-							<td><input type = "hidden" value = "${dto.productmodel}">${dto.productmodel}</td>
-							<td><input type = "hidden" value = "${dto.productprice}">${dto.productprice}원</td>
-							<td><input type = "hidden" value = "${dto.productsize}">${dto.productsize}</td>
-					    	<td><input type = "hidden" value = "${dto.orderquantity}">${dto.orderquantity}</td>
-							<td>
-							<%-- 	<a href = "cartListDelete.do?orderid=${dto.orderid }"> --%>
-							<button onclick="selectedDelete(${dto.orderid })" type = "button" class="btn btn-dark" style = "height: 20px; font-size: 15px; align: center;">삭제</button>
-								<!-- </a> -->
-							</td>
+							<td><input type = "hidden" name = "productmodel" value = "${dto.productmodel}">${dto.productmodel}</td>
+							<td><input type = "hidden" name = "productprice" value = "${dto.productprice}">${dto.productprice}원</td>
+							<td><input type = "hidden" name = "productsize" value = "${dto.productsize}">${dto.productsize}</td>
+					    	<td><input type = "hidden" name = "orderquantity" value = "${dto.orderquantity}">${dto.orderquantity}</td>
+							<td><button onclick="selectedDelete(${dto.orderid })" type = "button" class="btn btn-dark" style = "height: 20px; font-size: 15px; align: center;">삭제</button></td>
 					    </tr>
 		 			</tbody>
 		 			

@@ -248,7 +248,7 @@ public class Controller extends HttpServlet {
 		case("/Customer/selectedProductBuy.do"):
 			customercommand = new SCustomerSelectedBuyCommand();
 			customercommand.execute(request, response);
-			viewPage = "main.jsp";
+			viewPage = "customerProductList.do";
 			break;
 		
 		// 장바구니 선택 상품 삭제하기

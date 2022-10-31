@@ -14,17 +14,6 @@ function cartInsert(){
 					
 		form.action = "productCart.do";
 		form.submit();
-	<%-- var customerid = <%=(String)session.getAttribute("CUSTOMERID") %>;
-	
-	if(customerid == null) {
-		alert("로그인 후 진행 가능한 기능입니다.");
-		
-	} else {
-		alert("로그인 후 진행 가능한 기능입니다.");
-		form.action = "login.do";
-		form.submit();
-		
-	} --%>
 }
 
 </script>
@@ -41,49 +30,29 @@ function cartInsert(){
 	
 	  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
 	  
-	    <div class="card" style="width: 18rem; height: 18rem">
-		  <img src = "./shoesFolder1/1.png" class="card-img-top" alt="...">
+	    <div class="card" style="width: 40rem; height: 0rem">
+		  <img src = "./shoesFolder1/${productmodel}.png" class="card-img-top" alt="...">
 	    </div>
 
-	    <div class="card" style="width: 18rem; height: 18rem">
-		  <img src="./shoesFolder2/1.png" class="card-img-top" alt="...">
-	    </div>
-		    
-	  </div>
+	  </div> 
 	    
 	<table>
 		    
-		<tr style = " position: relative;  left: 900px; bottom: 300px">
+		<tr style = " position: relative;  left: 900px; bottom: 20px">
 			<td><h1><input type = "hidden" name = "productmodel" value = "${detail.productmodel }">${detail.productmodel }</h1></td>
 		</tr>
 		
-		<tr style = " position: relative;  left: 900px; bottom: 200px">
+		<tr style = " position: relative;  left: 900px; top: 100px">
 			<td><h1><input type = "hidden" name = "productprice" value = "${detail.productprice }">${detail.productprice } 원</h1></td>
 		</tr>
 		    
 	</table>
 	    
-	<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-		<div class="card" style="width: 18rem; height: 18rem; bottom: 150px">
-			<img src="./shoesFolder3/1.png" class="card-img-top" alt="...">	
-		</div>
-	    
-		<div class="card" style="width: 18rem; height: 18rem; bottom: 150px">
-			<img src="./shoesFolder4/1.png" class="card-img-top" alt="...">
-		</div>
-	</div>
-	  
-	   
     <table>
-    	<tr style = " position: relative;  left: 700px; bottom: 400px">
-    		<td>
-    		
-   			</td>
-    	</tr>
     	
-   		 <tr style = " position: relative;  left: 790px; bottom: 320px;">
+   		 <tr style = " position: relative;  left: 790px; top: 240px;">
 			<td>
-				 <select style = "width: 500px; height: 32px;" name = "productsize">
+				<select style = "width: 500px; height: 32px;" name = "productstock">
 				    <c:forEach items = "${list}" var = "dto">
 						<option value = "${dto.productsize }">${dto.productsize }</option>
 				    </c:forEach>
@@ -91,7 +60,7 @@ function cartInsert(){
 			</td>
 		</tr>
 
-   		 <tr style = " position: relative;  left: 790px; bottom: 320px;">
+   		 <tr style = " position: relative;  left: 790px; top: 240px;">
 			<td>
 				<select style = "width: 500px; height: 32px;" name = "productstock">
 				    <c:forEach begin = "1" end = "10" var = "num">
@@ -101,7 +70,7 @@ function cartInsert(){
 			</td>
 		</tr>
 
-		<tr style = " position: relative;  left: 790px; bottom: 300px;">
+		<tr style = " position: relative;  left: 790px; top: 250px;">
 			<td>
 				<button type = "button" class="btn btn-dark me-2" style = "width: 500px;" onclick="cartInsert()">CART</button>
 			</td>
