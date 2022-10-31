@@ -13,9 +13,19 @@ public class SManagerHistoryCommand implements SManagerCommand {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
+		String select = request.getParameter("select");
+		String content = request.getParameter("contet");
+		
+		if (select == null) {
+			select = "buyid";
+			content = "";
+		}
+		
 		MHistoryDao dao = new MHistoryDao();
-		ArrayList<MHistoryDto> dtos = dao.historyList();
+		ArrayList<MHistoryDto> dtos = dao.historyList(select, content);
 		request.setAttribute("HISTORYLIST", dtos);
+		
+		
 	}
 
 	@Override

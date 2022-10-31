@@ -28,11 +28,11 @@
 			</div>
 				
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="align-items: center">
-			<form action= "history.do" class="d-flex" role="search">
+			<form action= "history.do" name="select" class="d-flex" role="search">
 				<select name = "select">
-					<option value = "model" selected = "selected">제품명</option>
-					<option value = "size">사이즈</option>
-					<option value = "orderdate">주문일</option>
+					<option value = "productmodel" selected = "selected">제품명</option>
+					<option value = "productsize">사이즈</option>
+					<option value = "buyorderdate">주문일</option>
 				</select>&nbsp;&nbsp;&nbsp;
 				
 				<input type = "text" name = "content" size = "30" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

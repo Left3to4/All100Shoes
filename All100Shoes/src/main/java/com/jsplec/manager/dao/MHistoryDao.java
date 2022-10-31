@@ -30,7 +30,7 @@ public class MHistoryDao {
 	}
 	
 	// M
-	public ArrayList<MHistoryDto> historyList(){
+	public ArrayList<MHistoryDto> historyList(String select, String content){
 		ArrayList<MHistoryDto> dtos = new ArrayList<>();
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -40,7 +40,7 @@ public class MHistoryDao {
 			connection = dataSource.getConnection();
 			
 			String query = "select b.buyid, p.productmodel, p.productsize, b.buyquantity, b.buyprice, b.buyorderdate from product p, buy b ";
-			String query1 = "where p.productid = b.productid";
+			String query1 = "where " + select + " like '%" + content + "%' and p.productid = b.productid";
 			preparedStatement = connection.prepareStatement(query+query1);
 			resultSet = preparedStatement.executeQuery();
 			
