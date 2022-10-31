@@ -28,6 +28,13 @@
 	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 	crossorigin="anonymous">
 	
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+</style>
 
 <style>
 .bd-placeholder-img {
@@ -81,13 +88,26 @@
 	white-space: nowrap;
 	-webkit-overflow-scrolling: touch;
 }
+
+h1 {
+	font-family: 'Black Han San';
+	font-size: 18px;
+}
+
+h2 {
+	font-family: 'Black Han San';
+	font-size: 18px;
+}
+
+
 </style>
+
+
 
 </head>
 <body>
 	<%@include file="managerHeader.jsp" %>
-	
-	<main>
+<br><br><br><br>	<main>
 	
 	<form action="managermain.do" name="main" method="post">
 		<div class="row">
@@ -95,7 +115,7 @@
 			<div class="card text-bg-light mb-3" style="width: 450px; height:500px;">
 			<!-- <div class="card-header">Header</div> -->
 				<div class="card-body">
-					<h1 class="card-title" align="center">오늘 가입한 고객 수</h1>
+					<h1 class="card-title" align="center" >오늘 가입한 고객 수</h1>
 					<br><br><br><br><br><br>
 					<h2 class="card-text" align="center">${SIGNTODAY}명</h2>
 				</div>

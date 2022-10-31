@@ -23,7 +23,7 @@
 
 
 <img src="sport-shoe.png" style="width: 80px; margin-left: 30px;">
-	<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-10">
+	<ul class="nav col-8 col-md-auto mb-2 justify-content-center mb-md-10">
 		<li><a href="managermain.do" class="nav-link px-2 link-secondary">HOME</a></li>
 		<li><a href="userlist.do" class="nav-link px-2 link-secondary">USERS</a></li>
 		<li><a href="productlist.do" class="nav-link px-2 link-secondary">PRODUCTS</a></li>
@@ -33,7 +33,7 @@
  
 	<div class="col-md-4 text-end" style="margin-right: 30px;">
 			<form name="loginokay" method="post">
-				${MANAGERNAME}님, 안녕하세요! <input type="button" class="btn btn-dark"
+				${MANAGERNAME}님, 안녕하세요! &nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-dark"
 					onclick="mypage()" value="마이페이지"> <input type="button"
 					class="btn btn-outline-dark me-2" onclick="logout()" value="로그아웃">
 			</form>

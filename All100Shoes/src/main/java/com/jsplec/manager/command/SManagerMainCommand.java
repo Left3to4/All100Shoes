@@ -17,15 +17,12 @@ public class SManagerMainCommand implements SManagerCommand {
 		
 		int user = dao.signToday();
 		request.setAttribute("SIGNTODAY", user);
-		System.out.println(user);
 		
 		int order = dao.ordersToday();
 		request.setAttribute("ORDERSTODAY", order);
-		System.out.println(order);
 
 		int sales = dao.salesToday();
 		request.setAttribute("SALESTODAY", sales);
-		System.out.println(sales);
 		
 	}
 
