@@ -63,7 +63,7 @@
   </div>
 </nav>
  
-	<div class="col-md-4 text-end">
+	<div class="col-md-4 text-end" style="margin-right: 30px;">
 		<%if (session.getAttribute("CUSTOMERID") == null) { %>
 			<form name="loginbtn" method="post">
 				<input type="button" class="btn btn-outline-dark me-2" onclick="login()" value="Log in"> 
