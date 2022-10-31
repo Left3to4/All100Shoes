@@ -55,11 +55,9 @@ function updateaction(){
 		alert("비밀번호가 일치하지 않습니다.");
 		return;
 	}
-	if(idcheck=="yes"){
-		alert("계정 정보가 변경되었습니다.");
-		form.action="update.do";
-		form.submit();
-	}
+	alert("계정 정보가 변경되었습니다.");
+	form.action="update.do";
+	form.submit();
 }
 </script>
 </head>
