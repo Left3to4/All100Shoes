@@ -16,7 +16,13 @@ public class SCustomerBuyListCommand implements SCustomerCommand {
 		SCustomerBuyListDao dao = new SCustomerBuyListDao();
 		ArrayList<SCustomerBuyListDto> dtos =  dao.buyList(request);
 		
-		int page = 1; //처음에는 무조건 1페이지가 실행되도록
+		request.setAttribute("buyList", dtos);
+
+		
+		
+		
+	 
+	 	int page = 1; //처음에는 무조건 1페이지가 실행되도록
 		int limit = 10; //한 페이지에 보이는 최대 게시글 개수
 		
 		//값이 넘어오면 null이 아니고, 값을 선택한 적이 없으면 null → 여기 정해둔 대로 page값이 1.
@@ -41,7 +47,6 @@ public class SCustomerBuyListCommand implements SCustomerCommand {
 		    endpage = maxpage;                                                                               
 		} 
 		
-		request.setAttribute("buyList", dtos);
 //		request.setAttribute("boardList", boardList);
 
 		request.setAttribute("maxpage", maxpage);

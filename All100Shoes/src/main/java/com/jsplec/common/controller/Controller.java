@@ -265,7 +265,7 @@ public class Controller extends HttpServlet {
 			viewPage = "customerCartPage.do";
 			break;
 			
-		// 장바구니 선택 상품 삭제하기
+		// 구매 리스트 출력
 		case("/Customer/customerBuyList.do"):
 			customercommand = new SCustomerBuyListCommand();
 			customercommand.execute(request, response);

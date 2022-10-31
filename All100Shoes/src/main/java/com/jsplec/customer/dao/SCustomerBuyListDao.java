@@ -39,6 +39,11 @@ public class SCustomerBuyListDao {
 		try {
 			connection = dataSource.getConnection();
 			
+//			String query1 = "select * from ";
+//			String query2 = "(select rownum rnum, p.productbrand, p.productmodel, p.productsize, o.orderquantity, o.ordersaleprice * o.orderquantity, date_format(o.orderdate, '%Y-%m-%d') ";
+//			String query3 = "from (select * from product p, orders o p.productid = o.productid order by o.orderdate desc)) ";
+//			String query4 = "where rnum >= ? and rnum <= ? and ";
+			
 			String query1 = "select p.productbrand, p.productmodel, p.productsize, o.orderquantity, o.ordersaleprice * o.orderquantity, date_format(o.orderdate, '%Y-%m-%d') ";
 			String query2 = "from product p, orders o ";
 			String query3 = "where o.customerid = '" + session.getAttribute("CUSTOMERID") + "' and o.orderstatus = '구매' and orderdate is not null and p.productid = o.productid";

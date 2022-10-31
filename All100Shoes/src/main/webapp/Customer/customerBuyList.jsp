@@ -61,6 +61,7 @@ int startpage = (Integer)(request.getAttribute("startpage"));
 int endpage = (Integer)(request.getAttribute("endpage"));
 %>
 
+<div align="center">
 <table>
 <!-- 페이지 번호 시작 -->
    <tr align="center" height="20">
@@ -68,7 +69,8 @@ int endpage = (Integer)(request.getAttribute("endpage"));
       <%if(nowpage <= 1){ %>
       [이전] &nbsp;
       <%}else{%>
-      <a href="BoardServlet?command=board_list&page=<%= nowpage-1 %>">[이전]</a>&nbsp;
+		    <%--  <a href="customerBuyList.do?command=board_list&page=<%= nowpage-1 %>">[이전]</a>&nbsp; --%>
+		     <a href="http://localhost:8080/All100Shoes/Customer/customerBuyList.do?command=board_list&page=<%= nowpage-1 %>">[이전]</a>&nbsp;
       <%}%>
       
       <%
@@ -77,18 +79,19 @@ int endpage = (Integer)(request.getAttribute("endpage"));
       %>
          [<%= a %>]      
             <%}else{%>
-            <a href="BoardServlet?command=board_list&page=<%= a %>">[<%= a %>]</a>&nbsp;
+             <a href="http://localhost:8080/All100Shoes/Customer/customerBuyList.do?command=board_list&page=<%= a %>">[<%= a %>]</a>&nbsp;
          <%}%>
       <%}%>
 
       <% if(nowpage >= maxpage){ %> 
       [다음]
       <%} else { %>
-      <a href="BoardServlet?command=board_list&page=<%= nowpage+1 %>">[다음]</a>&nbsp;
+      		 <a href="http://localhost:8080/All100Shoes/Customer/customerBuyList.do?command=board_list&page=<%= nowpage+1 %>">[다음]</a>&nbsp;
       <%}%>
       </td>
    </tr>
 </table>
+   </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
