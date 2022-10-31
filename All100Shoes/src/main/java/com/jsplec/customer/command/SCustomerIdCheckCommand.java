@@ -10,10 +10,9 @@ public class SCustomerIdCheckCommand implements SCustomerCommand {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		String customerid=request.getParameter("customerid");
+		String customerid=request.getParameter("id");
 		DaoSighup dao=new DaoSighup();
 		boolean check=dao.checkId(customerid);
-		System.out.println(check);
 		request.setAttribute("CHECK", check);
 		request.setAttribute("CHECKID", customerid);
 		
