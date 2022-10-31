@@ -223,7 +223,7 @@
 				<div class="col-lg-2 col-md-4">
 					<div class="card" style="width: 14rem;">
 					<a href="productDetail.do?productmodel=${dto.productmodel}">
-						<img src="./shoesFolder1/2.png" class="card-img-top"
+						<img src="./productListImage/${dto.productmodel}.png" class="card-img-top"
 							alt="${dto.productmodel}">
 					</a>
 						<div class="card-body">
@@ -238,8 +238,8 @@
 				<div class="col-lg-2 col-md-4">
 					<div class="card" style="width: 14rem;">
 					<a href="productDetail.do?productmodel=${dto.productmodel}">
-						<img src="./shoesFolder1/2.png" class="card-img-top"
-							alt="${dto.productmodel}">
+						<img src="./productListImage/${dto.productmodel}.png" class="card-img-top"
+							alt="${dto.productmodel}" style="max-height:100">
 					</a>
 						<div class="card-body">
 							<p class="card-text" align="center">${dto.productbrand} ${dto.productmodel}</p>
