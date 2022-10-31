@@ -17,6 +17,14 @@
 <div class="divPosition">
 <h3 align="center" >PW 찾기</h3>
 <div id="wrap" >
+<script type="text/javascript">
+	function Findpw() {
+		var ret = window.open("Findpw.jsp", "ID", "width=500,height=600,toolbar=no,left=50,top=50");
+		
+	}
+	
+	// window 창을 띄워서 찾은 아이디를 보여준다.
+</script>
 <form action="findpw.do" method="post">
 	<table border="0" align="center" >
 	<tr>
@@ -28,7 +36,12 @@
 		<td><input type="text" name="customerphone"><br></td>
 	</tr>
 	<tr>
-		<td><input type="submit" value="확인">"${PW}"</td>
+			<td>
+	 	<button type="button" name="bt" >
+	 	<a href="http://localhost:8080/All100Shoes/Customer/login.jsp">login이동</a>
+		 </button>	</td>
+		<td><input type="submit" value="비밀번호 확인" onclick= "Findpw()"  >
+			</td>
 		</tr>
 </table>
 </form>
