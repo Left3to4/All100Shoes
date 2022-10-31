@@ -8,7 +8,12 @@
 
 
 <a href = "customerProductList.do"><img src="sport-shoe.png" style="width: 80px; margin-left: 30px;" /></a>
-
+<script type="text/javascript">
+function signup() {
+	var form=document.loginbtn;
+	form.action="http://localhost:8080/All100Shoes/Customer/customerSighup.jsp";
+	form.submit();
+}</script>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +68,7 @@
   </div>
 </nav>
  
-	<div class="col-md-4 text-end" style="margin-right: 30px;">
+	<div class="col-md-4 text-end">
 		<%if (session.getAttribute("CUSTOMERID") == null) { %>
 			<form name="loginbtn" method="post">
 				<input type="button" class="btn btn-outline-dark me-2" onclick="login()" value="Log in"> 
@@ -77,16 +82,15 @@
 				<input type="submit" class="btn btn-dark" onclick="mypage()" value="마이페이지">
 				<input type="submit" class="btn btn-outline-dark me-2" onclick="javascript: form.action='customerCartPage.do'" value="장바구니">
 			</form>
-			<div class="col-md-4 text-end">
-				<form name="loginokay" method="post" style="position: absolute; right: 0px; top: 70px;">
-					<input type="submit" style="position: absolute; right: 85px;" class="btn btn-outline-dark me-2" onclick="javascript: form.action='customerBuyList.do'" value="구매 리스트">
-					<input type="submit" style="position: absolute; right: 10px;" class="btn btn-dark" onclick="javascript: form.action='login.do'" value="로그아웃">
-				</form>
-			</div>
 		<%} %>
 	</div>
 	
-	
+	<div class="col-md-4 text-end">
+			<form name="loginokay" method="post" style="position: absolute; right: 0px; top: 70px;">
+				<input type="submit" style="position: absolute; right: 85px;" class="btn btn-outline-dark me-2" onclick="javascript: form.action='customerBuyList.do'" value="구매 리스트">
+				<input type="submit" style="position: absolute; right: 10px;" class="btn btn-dark" onclick="javascript: form.action='login.do'" value="로그아웃">
+			</form>
+	</div>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	
