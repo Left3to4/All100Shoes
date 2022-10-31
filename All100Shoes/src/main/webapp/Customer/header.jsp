@@ -42,7 +42,7 @@ function signup() {
             Adidas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="customerProductList.do?query=productbrand&content=nike">Nike All</a></li>
+            <li><a class="dropdown-item" href="customerProductList.do?query=productbrand&content=nike">Adidas All</a></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=adidas&pcategory=sneakers">Sneakers</a></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=adidas&pcategory=running">Running</a></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=adidas&pcategory=basketball">Basketball</a></li>
@@ -53,7 +53,7 @@ function signup() {
             Underarmour
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="customerProductList.do?query=productbrand&content=nike">Nike All</a></li>
+            <li><a class="dropdown-item" href="customerProductList.do?query=productbrand&content=nike">UnderAmour All</a></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=underarmour&pcategory=sneakers">Sneakers</a></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=underarmour&pcategory=running">Running</a></li>
             <li><a class="dropdown-item" href="customerProductListCategory.do?pbrand=underarmour&pcategory=basketball">Basketball</a></li>
