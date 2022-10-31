@@ -20,7 +20,10 @@ public class SCustomerCartCommand implements SCustomerCommand {
 		int productprice = Integer.parseInt(request.getParameter("productprice"));
 		int productstock = Integer.parseInt(request.getParameter("productstock"));
 		String productmodel = request.getParameter("productmodel");
-		
+		System.out.println(productsize);
+		System.out.println(productprice);
+		System.out.println(productstock);
+		System.out.println(productmodel);
 		int productid = dao.selectProductId(productsize, productmodel);
 		int index = 0;
 		

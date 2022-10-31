@@ -19,7 +19,7 @@
 <script type="text/javascript">
 function backtomain(){
 	var form=document.login;
-	form.action="http://localhost:8080/All100Shoes/Customer/main.jsp";
+	form.action="customerProductList.do";
 	form.submit();
 }
 

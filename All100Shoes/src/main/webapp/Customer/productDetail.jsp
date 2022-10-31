@@ -52,7 +52,7 @@ function cartInsert(){
     	
    		 <tr style = " position: relative;  left: 790px; top: 240px;">
 			<td>
-				<select style = "width: 500px; height: 32px;" name = "productstock">
+				<select style = "width: 500px; height: 32px;" name = "productsize">
 				    <c:forEach items = "${list}" var = "dto">
 						<option value = "${dto.productsize }">${dto.productsize }</option>
 				    </c:forEach>
