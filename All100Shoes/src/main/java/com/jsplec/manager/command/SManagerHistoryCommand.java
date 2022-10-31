@@ -14,10 +14,10 @@ public class SManagerHistoryCommand implements SManagerCommand {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		String select = request.getParameter("select");
-		String content = request.getParameter("contet");
+		String content = request.getParameter("content");
 		
 		if (select == null) {
-			select = "buyid";
+			select = "productmodel";
 			content = "";
 		}
 		

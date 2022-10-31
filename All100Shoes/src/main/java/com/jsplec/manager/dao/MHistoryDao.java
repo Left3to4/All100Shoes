@@ -40,7 +40,7 @@ public class MHistoryDao {
 			connection = dataSource.getConnection();
 			
 			String query = "select b.buyid, p.productmodel, p.productsize, b.buyquantity, b.buyprice, b.buyorderdate from product p, buy b ";
-			String query1 = "where " + select + " like '%" + content + "%' and p.productid = b.productid";
+			String query1 = "where " + select + " like '%" + content + "%' and p.productid = b.productid order by b.buyorderdate desc";
 			preparedStatement = connection.prepareStatement(query+query1);
 			resultSet = preparedStatement.executeQuery();
 			
@@ -51,8 +51,6 @@ public class MHistoryDao {
 				int buyquantity = resultSet.getInt("b.buyquantity");
 				int buyprice = resultSet.getInt("b.buyprice");
 				Timestamp buyorderdate = resultSet.getTimestamp("b.buyorderdate");
-				
-				System.out.println(buyid);
 				
 				MHistoryDto dto = new MHistoryDto(buyid, productmodel, productsize, buyquantity, buyprice, buyorderdate);
 						
