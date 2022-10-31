@@ -39,7 +39,7 @@ public class MHistoryDao {
 		try {
 			connection = dataSource.getConnection();
 			
-			String query = "select b.buyid p.productmodel, p.productsize, b.buyquantity, b.buyprice, b.buyorderdate from product p, buy b ";
+			String query = "select b.buyid, p.productmodel, p.productsize, b.buyquantity, b.buyprice, b.buyorderdate from product p, buy b ";
 			String query1 = "where p.productid = b.productid";
 			preparedStatement = connection.prepareStatement(query+query1);
 			resultSet = preparedStatement.executeQuery();
@@ -52,7 +52,9 @@ public class MHistoryDao {
 				int buyprice = resultSet.getInt("b.buyprice");
 				Timestamp buyorderdate = resultSet.getTimestamp("b.buyorderdate");
 				
-				MHistoryDto dto = new MHistoryDto(buyid, productmodel, productsize, buyprice, buyorderdate, buyquantity);
+				System.out.println(buyid);
+				
+				MHistoryDto dto = new MHistoryDto(buyid, productmodel, productsize, buyquantity, buyprice, buyorderdate);
 						
 				dtos.add(dto);
 				}

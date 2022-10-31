@@ -19,14 +19,14 @@ public class MHistoryDto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MHistoryDto(int buyid, String productmodel, String productsize, int buyprice, Timestamp buyorderdate, int buyquantity) {
+	public MHistoryDto(int buyid, String productmodel, String productsize, int buyquantity, int buyprice, Timestamp buyorderdate) {
 		super();
 		this.buyid = buyid;
 		this.productmodel = productmodel;
 		this.productsize = productsize;
+		this.buyquantity = buyquantity;
 		this.buyprice = buyprice;
 		this.buyorderdate = buyorderdate;
-		this.buyquantity = buyquantity;
 	}
 
 	// M
