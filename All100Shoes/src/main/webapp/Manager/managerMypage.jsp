@@ -32,11 +32,9 @@ function pwcheck(){
 		form.managerpwchecktxt.value="비밀번호가 일치합니다";
 	}
 }
-
 var regExId=/^[a-z|0-9]+$/; //영문 소문자와 숫자만 한 글자 이상
 var regExPw=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 var regExPhone=/^[0-9]+$/; //숫자만 한 글자 이상
-
 function updateaction(){
 	var form=document.mypage;
 	var pw=form.managerpw.value;
@@ -55,9 +53,9 @@ function updateaction(){
 		alert("비밀번호가 일치하지 않습니다.");
 		return;
 	}
-	alert("계정 정보가 변경되었습니다.");
-	form.action="update.do";
-	form.submit();
+		alert("계정 정보가 변경되었습니다.");
+		form.action="update.do";
+		form.submit();
 }
 </script>
 </head>
@@ -75,25 +73,25 @@ function updateaction(){
 <div class="mb-3 row">
     <label for="staticEmail" class="col-sm-4 col-form-label">비밀번호: </label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="managerpw" value="${MMypageDto.managerpw }">
+      <input type="password" class="form-control" name="managerpw" value="${MMypageDto.managerpw }">
     </div>
 </div>
 <div class="mb-3 row">
     <label for="staticEmail" class="col-sm-4 col-form-label">비밀번호 확인: </label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="managerpw" value="${MMypageDto.managerpw }">
+      <input type="password" class="form-control" name="managerpwchecktxt" value="${MMypageDto.managerpw }">
     </div>
 </div>
 <div class="mb-3 row">
     <label for="staticEmail" class="col-sm-4 col-form-label">이름: </label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="managerpw" value="${MMypageDto.managername }">
+      <input type="text" class="form-control" name="managername" value="${MMypageDto.managername }">
     </div>
 </div>
 <div class="mb-3 row">
     <label for="staticEmail" class="col-sm-4 col-form-label">전화번호: </label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="managerpw" value="${MMypageDto.managerphone }">
+      <input type="text" class="form-control" name="managerphone" value="${MMypageDto.managerphone }">
     </div>
 </div>
 <input type="button" class="btn btn-dark" name="update" value="수정하기" onclick="updateaction()">
